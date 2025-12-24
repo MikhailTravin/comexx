@@ -1,9 +1,17 @@
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', function () {
-  if (window.scrollY > 100) {
+  const currentScrollY = window.scrollY;
+  const isScrollingDown = currentScrollY > lastScrollY;
+  const isScrollingUp = currentScrollY < lastScrollY;
+
+  if (currentScrollY > 100 && isScrollingDown) {
     document.documentElement.classList.add('scroll');
-  } else {
+  } else if (isScrollingUp) {
     document.documentElement.classList.remove('scroll');
   }
+
+  lastScrollY = currentScrollY;
 });
 
 const header = document.querySelector('.header');

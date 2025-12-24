@@ -4,8 +4,7 @@
   --container-padding: 30px;
   --theme-color-accent: #a6a6a6;
   --theme-color-text-common: #121212;
-  --font-family: "FuturaNew", sans-serif;
-  --second-family: "Jost", sans-serif;
+  --font-family: "TTHovesProTrial", sans-serif;
 }
 
 /*
@@ -14,50 +13,29 @@
 2. Помогает отлавливать событие нажатия на кнопку при наличии в ней различных элементов
 */
 @font-face {
-  font-family: FuturaNew;
-  src: url("../fonts/FuturaNew-Medium.woff2") format("woff2");
+  font-family: TTHovesProTrial;
+  src: url("../fonts/TTHovesProTrial-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: FuturaNew;
-  src: url("../fonts/FuturaNew-Heavy.woff2") format("woff2");
-  font-weight: 900;
+  font-family: TTHovesProTrial;
+  src: url("../fonts/TTHovesProTrial-DemiBold.woff2") format("woff2");
+  font-weight: 587;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: FuturaNew;
-  src: url("../fonts/FuturaNew-ExtraBold.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: FuturaNew;
-  src: url("../fonts/FuturaNew-Demi.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: FuturaNew;
-  src: url("../fonts/FuturaNew-Book.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: FuturaNew;
-  src: url("../fonts/FuturaNew-Bold.woff2") format("woff2");
+  font-family: TTHovesProTrial;
+  src: url("../fonts/TTHovesProTrial-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: Jost;
-  src: url("../fonts/Jost-Regular.woff2") format("woff2");
+  font-family: TTHovesProTrial;
+  src: url("../fonts/TTHovesProTrial-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -165,11 +143,12 @@ a {
 }
 
 .main {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+  border-radius: 0px 0px 40px 40px;
+}
+@media (max-width: 500px) {
+  .main {
+    border-radius: 0px;
+  }
 }
 
 .container {
@@ -179,6 +158,7 @@ a {
 .header {
   position: sticky;
   top: 0;
+  z-index: 100;
   left: 0;
   width: 100%;
   padding: 15px 0px;
@@ -205,7 +185,7 @@ a {
 }
 @media (max-width: 768px) {
   .header {
-    min-height: 100%;
+    min-height: 60px;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
@@ -265,7 +245,7 @@ body {
 }
 @media (max-width: 500px) {
   body {
-    background: transparent;
+    background: #f5f5f5;
   }
 }
 
@@ -298,6 +278,7 @@ a {
 }
 
 .arrow-back {
+  z-index: 100;
   position: sticky;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -313,8 +294,6 @@ a {
   bottom: 43px;
   left: 16px;
   margin: 0px 0px 0px 16px;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
   border-radius: 50%;
   background: #fff;
   -webkit-box-shadow: 0 4px 20px 0 rgba(125, 125, 125, 0.05);
@@ -328,17 +307,94 @@ a {
   opacity: 0.7;
 }
 .scroll .arrow-back {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .block-banner {
   padding: 24px 0px;
 }
-.block-banner img {
+.block-banner__bg1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
-  height: auto;
   border-radius: 16px;
+}
+.block-banner__bg2 {
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  height: calc(100% + 8px);
+  width: auto;
+}
+@media (max-width: 350px) {
+  .block-banner__bg2 {
+    right: 0px;
+  }
+}
+.block-banner__content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  min-height: 169px;
+  padding: 16px 24px 14px 24px;
+}
+.block-banner__content .btn {
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  width: 100%;
+  border-radius: 48px;
+  min-height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #000;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.block-banner__content .btn:hover {
+  opacity: 0.7;
+}
+.block-banner__titles {
+  position: relative;
+  z-index: 10;
+  max-width: 200px;
+  margin: 0px 0px 12px 0px;
+}
+.block-banner__titles p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.5);
+}
+.block-banner__title {
+  font-weight: 587;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
 }
 
 .block-filter {
@@ -372,9 +428,7 @@ a {
   border-radius: 40px;
   padding: 4px 12px;
   background: #fff;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  white-space: nowrap;
   font-weight: 500;
   font-size: 14px;
   line-height: 140%;

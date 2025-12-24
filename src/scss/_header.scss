@@ -1,6 +1,7 @@
 .header {
   position: sticky;
   top: 0;
+  z-index: 100;
   left: 0;
   width: 100%;
   padding: 15px 0px;
@@ -21,7 +22,7 @@
     border-radius: 0px;
   }
   @media (max-width: 768px) {
-    min-height: 100%;
+    min-height: 60px;
     box-shadow: none;
   }
   @media (max-width: 500px) {

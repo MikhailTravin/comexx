@@ -1,9 +1,87 @@
 .block-banner {
     padding: 24px 0px;
-    img {
+
+    // .block-banner__bg1
+
+    &__bg1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        object-fit: cover;
         width: 100%;
-        height: auto;
         border-radius: 16px;
+    }
+
+    // .block-banner__bg2
+
+    &__bg2 {
+        position: absolute;
+        top: -8px;
+        right: 20px;
+        height: calc(100% + 8px);
+        width: auto;
+        @media (max-width: 350px) {
+            right: 0px;
+        }
+    }
+
+    // .block-banner__content
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 169px;
+        padding: 16px 24px 14px 24px;
+        .btn {
+            margin-top: auto;
+            position: relative;
+            z-index: 10;
+            background: #fff;
+            width: 100%;
+            border-radius: 48px;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 150%;
+            letter-spacing: 0.02em;
+            text-align: center;
+            color: #000;
+            transition: opacity 0.3s;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    // .block-banner__titles
+
+    &__titles {
+        position: relative;
+        z-index: 10;
+        max-width: 200px;
+        margin: 0px 0px 12px 0px;
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 120%;
+            letter-spacing: 0.02em;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    // .block-banner__title
+
+    &__title {
+        font-weight: 587;
+        font-size: 20px;
+        line-height: 120%;
+        letter-spacing: 0.02em;
     }
 }
 
@@ -36,7 +114,7 @@
         border-radius: 40px;
         padding: 4px 12px;
         background: #fff;
-        flex: 0 0 auto;
+        white-space: nowrap;
         font-weight: 500;
         font-size: 14px;
         line-height: 140%;
