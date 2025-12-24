@@ -1,0 +1,32 @@
+.main-wrapper-outer {
+  width: 100%;
+  min-height: calc(100% - 34px);
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  background: #f5f5f5;
+  border-radius: 40px;
+  margin-top: 34px;
+  margin-bottom: 34px;
+  @media (max-width: 500px) {
+    border-radius: 0px;
+    max-width: 100%;
+    min-height: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+.main {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.container {
+  padding: 0px 16px;
+}

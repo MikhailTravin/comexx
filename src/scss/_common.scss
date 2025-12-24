@@ -1,0 +1,69 @@
+body {
+  color: var(--theme-color-text-common);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  background: linear-gradient(224deg, #ffe0e0 0%, #ffdeee 100%);
+  .lock & {
+    overflow: hidden;
+  }
+  @media (max-width: 500px) {
+    background: transparent;
+  }
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+fieldset,
+fieldset legend {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  outline: none;
+  color: currentcolor;
+}
+
+.arrow-back {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  bottom: 43px;
+  left: 16px;
+  margin: 0px 0px 0px 16px;
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 20px 0 rgba(125, 125, 125, 0.05);
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+  .scroll & {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

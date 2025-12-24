@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Внутренняя страница</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        <header class="header">
+            <div class="header__text">
+                Девушка под дождем ...
+            </div>
+        </header>
+        <main class="main">
+
+            <div class="block-images">
+                <img src="img/image2.webp" alt="">
+                <img src="img/image3.webp" alt="">
+                <img src="img/image4.webp" alt="">
+                <img loading="lazy" src="img/image5.webp" alt="">
+                <img loading="lazy" src="img/image6.webp" alt="">
+                <img loading="lazy" src="img/image7.webp" alt="">
+            </div>
+
+            <a href="index.html" class="arrow-back">
+                <img loading="lazy" src="img/arrow1.svg" alt="">
+            </a>
+
+        </main>
+    </div>
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>
