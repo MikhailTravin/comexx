@@ -62,6 +62,9 @@
     // .block-banner__titles
 
     &__titles {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
         position: relative;
         z-index: 10;
         max-width: 200px;
