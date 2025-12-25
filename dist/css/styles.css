@@ -164,7 +164,7 @@ a {
   z-index: 100;
   left: 0;
   width: 100%;
-  padding: 15px 0px;
+  padding: 16px 0px;
   border-radius: 40px 40px 0px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,7 +179,7 @@ a {
   -webkit-transition: opacity 0.3s, border-radius 0.3s;
   transition: opacity 0.3s, border-radius 0.3s;
 }
-.scroll .header {
+.scroll .header.header2 {
   opacity: 0;
   pointer-events: none;
 }
@@ -188,7 +188,7 @@ a {
 }
 @media (max-width: 768px) {
   .header {
-    min-height: 60px;
+    min-height: 80px;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
@@ -202,9 +202,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
